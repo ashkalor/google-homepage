@@ -1,14 +1,122 @@
+<style>
+    body {
+
+        height: 100%;
+        font-family: Roboto, 'Segoe UI', Tahoma, sans-serif;
+        font-size: 81.25%;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-areas: "header"
+            "body"
+            "footer";
+        padding-bottom: 10px;
+    }
+
+    navbar {
+        height: 80px;
+        grid-area: header;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    main {
+        min-height: calc(100vh - 120px);
+        grid-area: body;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: auto;
+    }
+
+    footer {
+        height: 40px;
+        grid-area: footer;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .link {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .bg-img {
+        margin-left: 15px;
+    }
+
+    span {
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 1px 1px 1px 1px;
+        padding-left: 7.5px;
+        padding-right: 7.5px;
+        padding-top: 15px;
+
+
+    }
+
+    a {
+        position: relative;
+        text-decoration: none;
+        color: black;
+        text-decoration: underline;
+        font-weight: bold;
+        font-size: 14px;
+
+
+    }
+
+    .mainlogo {
+        margin: 15px 15px 15px 15px;
+        padding: 15px 15px 15px 15px;
+    }
+
+    #search {
+        margin: 0 auto;
+        width: 500px;
+        height: 40px;
+        border-radius: 30px;
+        border: 1px solid #dcdcdc;
+    }
+
+    #voice {
+        position: relative;
+        top: 9px;
+        right: 45px;
+        opacity: 0.7;
+    }
+
+    #sicon {
+        position: relative;
+        top: 9px;
+        left: 45px;
+        opacity: 0.7;
+    }
+
+    #search {
+        font-size: 14px;
+
+    }
+</style>
 <html>
 
 <head>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <header>
         <navbar>
-            <div>Gmail</div>
-            <div>Images</div>
+            <span>Gmail</span>
+            <span>Images</span>
             <span class="material-icons-outlined">
                 apps
             </span>
@@ -18,22 +126,30 @@
         </navbar>
     </header>
     <main>
-        <div><img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"></div>
-        <form>
-            <label for="search">
-                <input type="search" name="query" id="search">
-                <button>Search</button>
-            </label>
-        </form>
+        <div class="mainlogo"><img
+                src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"></div>
+        <div class="searchbar">
+            <form>
+                <label for="search">
+
+                    <a href="#"><span id="sicon" class="material-icons-outlined">search</span></a>
+                    <input type="search" placeholder="          Search Google or type URL " name="query" id="search">
+                    <a href="#"><span id="voice" class="material-icons-outlined">mic</span></a>
+                </label>
+            </form>
+        </div>
     </main>
     <footer>
-        <span class="material-icons-outlined">
-            link
-        </span>
-        <a href="#" class="bg-img">link to background image</a>
-        <span class="material-icons-outlined">
+        <div class="link">
+            <div class="material-icons-outlined">
+                link
+            </div>
+            <div><a href="#" class="bg-img">Link to background image</a></div>
+        </div>
+        </div>
+        <div class="material-icons-outlined">
             mode
-        </span>
+        </div>
     </footer>
 </body>
 
